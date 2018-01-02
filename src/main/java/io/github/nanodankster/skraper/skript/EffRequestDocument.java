@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Name("Request document")
-@Description("Request a document.")
+@Description("Request a html document from a website.")
 @Examples({"request document from url \"http://www.google.com\""})
 @Since("1.0-BETA")
 public class EffRequestDocument extends Effect {
