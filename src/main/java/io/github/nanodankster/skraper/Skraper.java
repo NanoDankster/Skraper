@@ -7,8 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.IOException;
 
 public class Skraper extends JavaPlugin {
-    private static Skraper instance;
-    private static SkriptAddon addonInstance;
+    private Skraper instance;
+    private SkriptAddon addonInstance;
 
     public Skraper() {
         if (instance == null) {
@@ -26,14 +26,14 @@ public class Skraper extends JavaPlugin {
             e.printStackTrace();
         }
     }
-    public static SkriptAddon getAddonInstance() {
+    private SkriptAddon getAddonInstance() {
         if (addonInstance == null) {
             addonInstance = Skript.registerAddon(getInstance());
         }
         return addonInstance;
     }
 
-    public static Skraper getInstance() {
+    private Skraper getInstance() {
         if (instance == null) {
             throw new IllegalStateException();
         }
