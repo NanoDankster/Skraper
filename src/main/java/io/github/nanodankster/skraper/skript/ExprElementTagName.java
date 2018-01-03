@@ -17,9 +17,9 @@ import org.jsoup.nodes.Element;
 @Description("Get the tag name of an element.")
 @Examples({"set {_tag} to html tag of element {_element}"})
 @Since("1.0-BETA")
-public class ExprElementTag extends SimpleExpression<String> {
+public class ExprElementTagName extends SimpleExpression<String> {
     static {
-        Skript.registerExpression(ExprElementTag.class, String.class, ExpressionType.PROPERTY,
+        Skript.registerExpression(ExprElementTagName.class, String.class, ExpressionType.PROPERTY,
                 "[the] [html] tag [name] of %htmlelement%");
     }
 
