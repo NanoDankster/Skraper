@@ -27,7 +27,7 @@ public class ExprElementText extends SimpleExpression<String> {
 
     @Override
     protected String[] get(Event event) {
-        return new String[]{expr_elm.getSingle(event).text()};
+        return new String[]{expr_elm.getSingle(event).ownText()};
     }
 
     @Override

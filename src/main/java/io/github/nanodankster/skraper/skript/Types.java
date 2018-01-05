@@ -1,16 +1,20 @@
 package io.github.nanodankster.skraper.skript;
 
+import ch.njol.skript.Skript;
 import ch.njol.skript.classes.ClassInfo;
+import ch.njol.skript.classes.Converter;
 import ch.njol.skript.classes.Parser;
 import ch.njol.skript.lang.ParseContext;
 import ch.njol.skript.registrations.Classes;
+import ch.njol.skript.registrations.Converters;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 public class Types {
     static {
         Classes.registerClass(new ClassInfo<>(Element.class, "htmlelement")
-                .user("htmlelement")
+                .user("htmlelements?")
                 .parser(new Parser<Element>() {
 
                     @Override
@@ -40,9 +44,10 @@ public class Types {
                 })
 
         );
+        Converters.registerConverter(Element.class, String.class, (Converter<Element, String>) element -> element.toString());
 
         Classes.registerClass(new ClassInfo<>(Document.class, "htmldocument")
-                .user("htmldocument")
+                .user("htmldocuments?")
                 .parser(new Parser<Document>() {
 
                     @Override
@@ -70,7 +75,8 @@ public class Types {
                         return ".+";
                     }
                 })
-
         );
+
+        Converters.registerConverter(Document.class, String.class, (Converter<Document, String>) document -> document.toString());
     }
 }
