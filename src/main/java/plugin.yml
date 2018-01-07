@@ -1,5 +1,5 @@
 name: Skraper
 main: io.github.nanodankster.skraper.Skraper
-version: 1.0
+version: 1.2
 author: Nano
 depend: [Skript]
