@@ -28,7 +28,11 @@ public class ExprReceivedDocument extends SimpleExpression<Document> {
 
     @Override
     protected Document[] get(Event event) {
-        return new Document[]{EffRequestDocument.lastHtmlDocument};
+        if (EffRequestDocument.lastHtmlDocument == null) {
+            return null;
+        } else {
+            return new Document[]{EffRequestDocument.lastHtmlDocument};
+        }
     }
 
     @Override

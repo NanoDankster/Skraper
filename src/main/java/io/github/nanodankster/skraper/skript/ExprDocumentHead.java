@@ -28,7 +28,11 @@ public class ExprDocumentHead extends SimpleExpression<Element> {
 
     @Override
     protected Element[] get(Event event) {
-        return new Element[]{expr_doc.getSingle(event).head()};
+        if (expr_doc == null) {
+            return null;
+        } else {
+            return new Element[]{expr_doc.getSingle(event).head()};
+        }
     }
 
     @Override

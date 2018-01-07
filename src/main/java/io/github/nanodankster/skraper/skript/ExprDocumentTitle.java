@@ -28,7 +28,11 @@ public class ExprDocumentTitle extends SimpleExpression<String> {
 
     @Override
     protected String[] get(Event event) {
-        return new String[]{expr_doc.getSingle(event).title()};
+        if (expr_doc == null) {
+            return null;
+        } else {
+            return new String[]{expr_doc.getSingle(event).title()};
+        }
     }
 
     @Override

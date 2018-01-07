@@ -34,7 +34,7 @@ public class ExprDocElmElements extends SimpleExpression<Element> {
     @Override
     protected Element[] get(Event event) {
         if (ty == 0) {
-            if (expr_ty.getSingle(event) != null) {
+            if (expr_ty.getSingle(event) != null && expr_str != null) {
                 Expression<Document> doc = (Expression<Document>) expr_ty;
                 Elements elms = doc.getSingle(event).select(expr_str.getSingle(event));
                 Element[] ret = new Element[elms.size()];

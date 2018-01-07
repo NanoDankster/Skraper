@@ -27,7 +27,11 @@ public class ExprElementTagName extends SimpleExpression<String> {
 
     @Override
     protected String[] get(Event event) {
-        return new String[]{expr_elm.getSingle(event).tagName()};
+        if (expr_elm == null) {
+            return null;
+        } else {
+            return new String[]{expr_elm.getSingle(event).tagName()};
+        }
     }
 
     @Override

@@ -28,7 +28,11 @@ public class ExprElementAttribute extends SimpleExpression<String> {
 
     @Override
     protected String[] get(Event event) {
-        return new String[]{expr_elm.getSingle(event).attr(expr_str.getSingle(event))};
+        if (expr_elm == null || expr_str == null) {
+            return null;
+        } else {
+            return new String[]{expr_elm.getSingle(event).attr(expr_str.getSingle(event))};
+        }
     }
 
     @Override

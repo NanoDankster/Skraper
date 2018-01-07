@@ -28,7 +28,11 @@ public class ExprDocumentBody extends SimpleExpression<Element> {
 
     @Override
     protected Element[] get(Event event) {
-        return new Element[]{expr_doc.getSingle(event).body()};
+        if (expr_doc == null) {
+            return null;
+        } else {
+            return new Element[]{expr_doc.getSingle(event).body()};
+        }
     }
 
     @Override

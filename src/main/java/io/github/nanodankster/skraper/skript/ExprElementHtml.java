@@ -30,13 +30,17 @@ public class ExprElementHtml extends SimpleExpression<Document> {
 
     @Override
     protected Document[] get(Event event) {
-        switch (ParseMark) {
-            case 0:
-                return new Document[]{Jsoup.parse(expr_elm.getSingle(event).html())};
-            case 1:
-                return new Document[]{Jsoup.parse(expr_elm.getSingle(event).outerHtml())};
+        if (expr_elm == null) {
+            return null;
+        } else {
+            switch (ParseMark) {
+                case 0:
+                    return new Document[]{Jsoup.parse(expr_elm.getSingle(event).html())};
+                case 1:
+                    return new Document[]{Jsoup.parse(expr_elm.getSingle(event).outerHtml())};
+            }
+            return null;
         }
-        return null;
     }
 
     @Override
