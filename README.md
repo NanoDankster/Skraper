@@ -11,3 +11,4 @@ Scrape websites with Skript!
 - Nano#1334
 - [Skript Hub Discord Server](https://skripthub.net/discord)
 - [Skript Chat Discord Server](https://discord.gg/wfkUMXZ)
+- [Skript Topluluğu Turkish Discord Server}(https://discord.gg/UuNuz5Y)
