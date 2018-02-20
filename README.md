@@ -1,6 +1,8 @@
 # Skraper
 Scrape websites with Skript!
 
+## Stopped!
+
 ### Relevant Links
 - [Releases](https://github.com/NanoDankster/Skraper/releases)
 - [Examples](https://github.com/NanoDankster/Skraper/wiki/Examples)
